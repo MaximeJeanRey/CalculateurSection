@@ -14,21 +14,15 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+    void renameTab();
 
 private slots:
-    void on_callResult_pressed();
-
-    void on_comboBox_currentIndexChanged(int index);
-
-    void on_pushButton_clicked();
-
-    void on_pushButton_pressed();
 
     void on_tabWidget_tabCloseRequested(int index);
 
-    void on_tabWidget_tabBarClicked(int index);
+    void on_tabWidget_currentChanged(int index);
 
-    void on_textEdit_textChanged();
+
 
 private:
     Ui::MainWindow *ui;
