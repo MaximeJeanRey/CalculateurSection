@@ -26,7 +26,6 @@ set(PROJECT_SOURCES
         ongletcalcul.cpp
         ongletcalcul.ui
 		icon.ico
-		secFront.qml
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)

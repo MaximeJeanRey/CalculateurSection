@@ -137,7 +137,7 @@
       </font>
      </property>
      <property name="text">
-      <string>Chute de tension réele (%)</string>
+      <string>Chute de tension réelle (%)</string>
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
