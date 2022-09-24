@@ -100,7 +100,7 @@ void OngletCalcul::on_callResult_clicked()
     }
 
     ui->dvResult->setValue(FinalResult);
-    ui->doubleSpinBox->setValue(tableauTab.chuteReele(ui->vLongueur->value(),ui->vCourant->value(), FinalResult, tableauTab.phase));
+    ui->doubleSpinBox->setValue(tableauTab.chuteReele(ui->vLongueur->value(),ui->vCourant->value(), FinalResult, tableauTab.phase, tableauTab.matiere));
 
 
 

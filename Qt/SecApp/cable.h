@@ -9,7 +9,7 @@ public:
 
     float searchNearest(float key, float tabToSearch[]);
     int getIndex(float element, float arr[16]);
-    float chuteReele(float L, float i, float S, bool tri);
+    float chuteReele(float L, float i, float S, bool tri, bool mat);
 
 
     float p = 0.00;
