@@ -25,6 +25,7 @@ public:
     float X = 0.08;
 
     float V = 230;
+    float I = 0;
 
     float ChuteV = 7; //%
 

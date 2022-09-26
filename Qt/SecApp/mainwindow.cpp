@@ -3,6 +3,7 @@
 #include <QTimer>
 #include "cable.h"
 #include "ongletcalcul.h"
+#include <QListView>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -10,7 +11,7 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
-    ui->tabWidget->insertTab(ui->tabWidget->count()-1, new OngletCalcul(), QIcon(QString("")), "1");
+   // ui->tabWidget->insertTab(ui->tabWidget->count()-1, new OngletCalcul(), QIcon(QString("")), "1");
     ui->tabWidget->removeTab(0);
     ui->tabWidget->setCurrentIndex(ui->tabWidget->count()-2);
 }
@@ -22,7 +23,7 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_tabWidget_tabCloseRequested(int index)
 {
-    if (ui->tabWidget->count() != 2 && index != ui->tabWidget->count()-1){
+    if (index != ui->tabWidget->count()){
         ui->tabWidget->removeTab(index);
         if(ui->tabWidget->currentIndex() == ui->tabWidget->count()-1){
            ui->tabWidget->setCurrentIndex(ui->tabWidget->count()-2);
@@ -35,7 +36,7 @@ void MainWindow::on_tabWidget_currentChanged(int index)
 {
    if(index == ui->tabWidget->count()-1){
         ui->tabWidget->setCurrentIndex(ui->tabWidget->count()-2);
-   }
+     }
 
 
    if (ui->tabWidget->count() <= 6 && index == ui->tabWidget->count()-1){
@@ -52,4 +53,6 @@ void MainWindow::renameTab(){
         ui->tabWidget->setTabText(i, QString::number(i+1) + "  ");
     }
 }
+
+
 
