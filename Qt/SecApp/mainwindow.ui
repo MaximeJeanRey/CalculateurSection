@@ -29,7 +29,7 @@
        <enum>QTabWidget::Rounded</enum>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>1</number>
       </property>
       <property name="elideMode">
        <enum>Qt::ElideMiddle</enum>
@@ -52,7 +52,7 @@
        </property>
        <property name="font">
         <font>
-         <pointsize>20</pointsize>
+         <pointsize>39</pointsize>
          <kerning>true</kerning>
         </font>
        </property>
@@ -60,7 +60,7 @@
         <set>Qt::ImhNone</set>
        </property>
        <attribute name="title">
-        <string>+</string>
+        <string> + </string>
        </attribute>
       </widget>
      </widget>
