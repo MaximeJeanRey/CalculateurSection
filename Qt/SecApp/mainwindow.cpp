@@ -12,6 +12,8 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
 
    // ui->tabWidget->insertTab(ui->tabWidget->count()-1, new OngletCalcul(), QIcon(QString("")), "1");
+    ui->tabWidget->tabBar()->setTabButton(1, QTabBar::RightSide, 0);
+
     ui->tabWidget->removeTab(0);
     ui->tabWidget->setCurrentIndex(ui->tabWidget->count()-2);
 }
@@ -23,13 +25,10 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_tabWidget_tabCloseRequested(int index)
 {
-    if (index != ui->tabWidget->count()){
-        ui->tabWidget->removeTab(index);
-        if(ui->tabWidget->currentIndex() == ui->tabWidget->count()-1){
-           ui->tabWidget->setCurrentIndex(ui->tabWidget->count()-2);
-        }
-        this->renameTab();
-    }
+
+    ui->tabWidget->removeTab(index);
+    this->renameTab();
+
 }
 
 void MainWindow::on_tabWidget_currentChanged(int index)

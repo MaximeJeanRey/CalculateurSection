@@ -4,6 +4,9 @@
 #include <iostream>
 #include <algorithm>
 #include <QListView>
+#include <QPrinter>
+#include <QPainter>
+
 
 cable tableauTab(0);
 
@@ -161,5 +164,23 @@ void OngletCalcul::on_comboBox_currentIndexChanged(int index)
             ui->vChuteV->setValue(5);
             break;
    }
+}
+
+
+void OngletCalcul::on_pushButton_clicked()
+{
+   QPrinter printer;
+   printer.setOutputFormat(QPrinter::PdfFormat);
+   printer.setOutputFileName("/foobar/nonwritable.pdf");
+   QPainter painter;
+   if (! painter.begin(&printer)) { // failed to open file
+       qWarning("failed to open file, is it writable?");
+   }
+   painter.drawText(10, 10, "Test");
+   if (! printer.newPage()) {
+       qWarning("failed in flushing page to disk, disk full?");
+   }
+   painter.drawText(10, 10, "Test 2");
+   painter.end();
 }
 
